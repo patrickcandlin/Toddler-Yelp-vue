@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <img src="./images/kid-in-field.jpg" alt="kid-in-feild" >
+        <img src="./images/kid-in-field2.jpg" alt="kid-in-feild" >
         <hr>
         <activites />
         <hr>

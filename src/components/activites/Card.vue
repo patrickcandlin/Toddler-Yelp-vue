@@ -1,7 +1,7 @@
 <template>
     <b-card
-        title="Card Title"
-        img-src="https://picsum.photos/600/300/?image=25"
+        title="Denver Botanic Gardens"
+        img-src="http://navigate.botanicgardens.org/PlantPix/Garden_Features/Thumbnails/101_20110816_SZ336.jpg"
         img-alt="Image"
         img-top
         tag="article"
@@ -9,7 +9,7 @@
         class="mb-2"
         >
             <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
+                Mordecai Children’s Garden is a place for children and families to explore plants and the natural world, through hands­-on experiences and play. A variety of authentic natural materials in this garden allow kids to use their imagination and sense of wonder to create their own connections with plants.
             </b-card-text>
 
         <b-button href="#" variant="light">View</b-button>
