@@ -2,8 +2,7 @@
 <template>
     <div>
         <img src="./images/kid-in-field2.jpg" alt="kid-in-feild" >
-        <hr>
-        <activites />
+        <Activites />
         <hr>
         <h2>Restaurants</h2>
         <hr>
