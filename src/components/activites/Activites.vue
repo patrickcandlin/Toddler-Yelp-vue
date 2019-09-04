@@ -3,11 +3,10 @@
         <router-link to="/activites">
             <h2>Activities</h2>
         </router-link>
-         <div class="container" v-for='business in businessArray'>
+        <div class="container" >
 
-            <Card  /> 
+            <Card  v-for='business in businessArray' :name='business.name' :image_url='business.image_url' /> 
                     
-
         </div>
     </section>
 </template>
@@ -36,3 +35,10 @@ export default {
     
 }
 </script>
+
+<style>
+    div.container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>

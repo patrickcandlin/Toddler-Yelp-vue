@@ -10,24 +10,6 @@
     </div>
 </template>
 
-<style >
-    img {
-        width: 100%;
-    }
-    div.container {
-        display: flex;
-        flex-wrap: wrap
-
-    }
-    article {
-        margin: 1rem;
-    }
-    h2 {
-        padding: 1rem;
-    }
-  
-</style>
-
 <script>
 import Activites from './activites/Activites.vue'
 export default {
@@ -36,3 +18,24 @@ export default {
    } 
 }
 </script>
+<style >
+    img {
+        width: 100%;
+    }
+    section {
+        width: 100%;
+    }
+    section div.container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+    }
+    article {
+        margin: .5rem;
+    }
+    h2 {
+        padding: 1rem;
+    }
+  
+</style>
