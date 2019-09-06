@@ -22,9 +22,7 @@ export default {
     img {
         width: 100%;
     }
-    section {
-        width: 100%;
-    }
+
     section div.container {
         display: flex;
         flex-wrap: wrap;

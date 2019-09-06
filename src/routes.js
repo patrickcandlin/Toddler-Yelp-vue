@@ -3,5 +3,5 @@ import Activites from "./components/activites/Activites.vue"
 
 export const routes = [
     { path: '/', component: Home },
-    { path: '/activites', component: Activites }
+    { path: '/activites', component: Activites, }
 ]
