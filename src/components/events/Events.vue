@@ -1,8 +1,8 @@
 <template>
     <section>
-        <b-container  >
-            <router-link to="/activites">
-                <h2>Activities</h2>
+        <b-container>
+            <router-link to='/events'>
+                <h2>Events</h2>
             </router-link>
         </b-container>
         <b-container>
@@ -29,20 +29,20 @@
                     >
                 </b-form-input>
                 <b-button size="md" class="my-2 my-sm-0" type="submit">Search</b-button>
-            </b-form>  
+            </b-form>
         </b-container>
         <b-container>
+
             <Card  
                 v-for='business in businessArray' 
                 :business='business' 
-            /> 
+                /> 
         </b-container>
-         <b-modal id="my-modal" @viewSelectedBusiness="slectedBusiness = $event"> {{ slectedBusiness.name }} </b-modal>
     </section>
 </template>
 <script>
 import axios from 'axios'
-import Card from "./Card.vue"
+import Card from "../activites/Card.vue"
 
 export default {
     data() {
@@ -51,7 +51,6 @@ export default {
             searchForm: {
                 location: '',
                 searchTerm: '',
-                slectedBusiness: {},
             }
         }
     },
@@ -78,7 +77,7 @@ export default {
         axios
         .get('http://localhost:3000/fusion/index', {
                 params: {
-                        term: "Activites", location: "80210"
+                        term: "events for kids", location: "80210"
                         }
                     }
             )

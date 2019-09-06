@@ -18,4 +18,8 @@ export default {
 
 <style>
 
+ #app {
+   min-width: 100%;
+ }
+
 </style>

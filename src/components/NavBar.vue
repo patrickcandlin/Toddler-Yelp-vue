@@ -16,7 +16,11 @@
                     <a>Activites</a>
                 </router-link>
             </b-nav-item>
-            <b-nav-item href="#">Events</b-nav-item>
+            <b-nav-item href="#">
+                <router-link to="/events">
+                  <a> Events </a>
+                </router-link>
+              </b-nav-item>
             <b-nav-item href="#">Restaurants</b-nav-item>
           </b-navbar-nav>
           <!-- Right aligned nav items -->
@@ -48,9 +52,7 @@ export default {
     name: 'NavBar',
     data() {
       return  { 
-            yelpUrl: "https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972",
-            search: "",
-            location: ""
+  
        }
     },
 }
