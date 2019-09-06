@@ -30,12 +30,11 @@ export default {
     props: {
         business: Object,
     },
-    methods: {
+    methods: { 
         passSelectedBusiness() {
-            console.log('clicked in child', this.business)
-            selectedBusiness = this.business
-            this.$emit('viewSelectedBusiness', selectedBusiness) 
-        },
+            console.log('Just vue it!', this.business)
+            this.$emit("viewSelectedBusiness", this.business)
+        }
     },
     name: "Card"
 }

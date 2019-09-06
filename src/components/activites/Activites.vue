@@ -1,5 +1,6 @@
 <template>
     <section>
+
         <b-container  >
             <router-link to="/activites">
                 <h2>Activities</h2>
@@ -35,9 +36,10 @@
             <Card  
                 v-for='business in businessArray' 
                 :business='business' 
+                @viewSelectedBusiness="setSelectedBusiness"
             /> 
         </b-container>
-         <b-modal id="my-modal" @viewSelectedBusiness="slectedBusiness = $event"> {{ slectedBusiness.name }} </b-modal>
+         <b-modal id="my-modal" > {{ selectedBusiness }} </b-modal>
     </section>
 </template>
 <script>
@@ -45,14 +47,15 @@ import axios from 'axios'
 import Card from "./Card.vue"
 
 export default {
+    name: "Activites",
     data() {
         return {
             businessArray: [],
             searchForm: {
                 location: '',
-                searchTerm: '',
-                slectedBusiness: {},
-            }
+                searchTerm: '',      
+            },
+            selectedBusiness: {},
         }
     },
     components: {
@@ -72,6 +75,10 @@ export default {
                     console.log(response)
                     this.businessArray = response.data.businesses
                 }) 
+        },
+        setSelectedBusiness(business){
+            console.log(business)
+            this.selectedBusiness = business
         }
     },
     mounted() {
