@@ -38,6 +38,7 @@
                 :image_url='business.image_url' 
             /> 
         </b-container>
+         <b-modal id="my-modal">Hello From My Modal!</b-modal>
     </section>
 </template>
 <script>
