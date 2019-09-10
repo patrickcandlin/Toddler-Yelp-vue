@@ -12,12 +12,22 @@
                 {{ business.name }}
                 </b-card-text>
             <b-button 
+            class="mr-1"
                 href="#" 
                 variant="light"
-                v-b-modal.my-modal
+                v-b-modal.write-review-modal
                 @click="passSelectedBusiness"
                 >
-                    Review
+                     Review
+            </b-button>
+            <b-button
+            class="mr-1"
+                href="#" 
+                variant="light"
+                v-b-modal.more-info-modal
+                @click="passSelectedBusiness"
+            >
+                more
             </b-button>
             
         </b-card>
@@ -32,10 +42,10 @@ export default {
     },
     methods: { 
         passSelectedBusiness() {
-            console.log('Just vue it!', this.business)
             this.$emit("viewSelectedBusiness", this.business)
         }
     },
     name: "Card"
 }
 </script>
+

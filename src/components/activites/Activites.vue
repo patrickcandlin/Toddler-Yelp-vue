@@ -1,6 +1,5 @@
 <template>
     <section>
-
         <b-container  >
             <router-link to="/activites">
                 <h2>Activities</h2>
@@ -19,7 +18,7 @@
                     class="mr-sm-2" 
                     placeholder="Address, City or Zip" 
                     v-model="searchForm.location" 
-                    >
+                >
                 </b-form-input>
                 <b-form-input 
                     size="md"
@@ -27,39 +26,57 @@
                     class="mr-sm-2"
                     placeholder="Search" 
                     v-model="searchForm.searchTerm" 
-                    >
+                >
                 </b-form-input>
-                <b-button size="md" class="my-2 my-sm-0" type="submit">Search</b-button>
+                <b-button 
+                    size="md"   
+                    class="my-2 my-sm-0" 
+                    type="submit"   
+                >
+                    Search
+                </b-button>
             </b-form>  
         </b-container>
         <b-container>
-            <Card  
+            <Card 
                 v-for='business in businessArray' 
                 :business='business' 
                 @viewSelectedBusiness="setSelectedBusiness"
             /> 
         </b-container>
-         <b-modal id="my-modal" > {{ selectedBusiness }} </b-modal>
+        <ReviewModal :selectedBusiness="selectedBusiness"/>
+        <MoreInfoModal :selectedBusiness="selectedBusiness" />
+
     </section>
 </template>
 <script>
 import axios from 'axios'
 import Card from "./Card.vue"
+import ReviewModal from "./ReviewModal.vue"
+import MoreInfoModal from "./MoreInfoModal.vue"
 
 export default {
     name: "Activites",
     data() {
         return {
+            
             businessArray: [],
             searchForm: {
                 location: '',
                 searchTerm: '',      
             },
-            selectedBusiness: {},
+           
+            selectedBusiness: {
+                location: {
+                    display_address: []
+                }
+            },
         }
     },
     components: {
-        Card
+        Card,
+        ReviewModal,
+        MoreInfoModal
     },
     methods: {
         fusionSearch() {
@@ -72,14 +89,13 @@ export default {
                     }
                 )
                 .then((response) =>{
-                    console.log(response)
                     this.businessArray = response.data.businesses
                 }) 
         },
         setSelectedBusiness(business){
-            console.log(business)
             this.selectedBusiness = business
-        }
+        },
+
     },
     mounted() {
         axios
@@ -94,6 +110,5 @@ export default {
             }
         )
     }
-    
 }
 </script>
