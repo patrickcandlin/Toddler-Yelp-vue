@@ -4,17 +4,19 @@
         <img src="./images/kid-in-field2.jpg" alt="kid-in-feild" >
         <Activites />
         <hr>
-        <h2>Restaurants</h2>
+        <Events />
         <hr>
-        <h2>Events</h2>
+        <h2>Restaurants</h2>
     </div>
 </template>
 
 <script>
 import Activites from './activites/Activites.vue'
+import Events from './events/Events.vue'
 export default {
    components: {
-       Activites
+       Activites,
+       Events
    } 
 }
 </script>
@@ -27,7 +29,6 @@ export default {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-
     }
     article {
         margin: .5rem;

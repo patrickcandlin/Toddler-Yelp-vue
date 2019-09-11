@@ -1,7 +1,7 @@
 <template>
         <b-card
-            :title="name"
-            :img-src="image_url""
+            :title="business.name"
+            :img-src="business.image_url"
             img-alt="Image"
             img-top
             tag="article"
@@ -9,14 +9,25 @@
             class="mb-2"
             >
                 <b-card-text>
-                {{ name }}
+                {{ business.name }}
                 </b-card-text>
             <b-button 
+            class="mr-1"
                 href="#" 
                 variant="light"
-                v-b-modal.my-modal
+                v-b-modal.write-review-modal
+                @click="passSelectedBusiness"
                 >
-                Review
+                     Review
+            </b-button>
+            <b-button
+            class="mr-1"
+                href="#" 
+                variant="light"
+                v-b-modal.more-info-modal
+                @click="passSelectedBusiness"
+            >
+                more
             </b-button>
             
         </b-card>
@@ -27,16 +38,14 @@
 <script>
 export default {
     props: {
-        name: String,
-        image_url: String
+        business: Object,
     },
-
-    data(){
-        return {
-            name: this.name,
-            image_url: this.image_url
+    methods: { 
+        passSelectedBusiness() {
+            this.$emit("viewSelectedBusiness", this.business)
         }
     },
     name: "Card"
 }
 </script>
+
