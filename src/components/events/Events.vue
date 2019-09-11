@@ -43,6 +43,7 @@
 <script>
 import axios from 'axios'
 import Card from "../activites/Card.vue"
+import {token} from "../../token"
 
 export default {
     data() {
@@ -61,7 +62,8 @@ export default {
         fusionSearch() {
             const { location, searchTerm } = this.searchForm
             axios
-                .get('http://localhost:3000/fusion/index', {
+                .get('http://localhost:3000/fusion/index',{
+                    headers:{'Authorization': `Bearer ${token}`},
                     params: {
                         term: searchTerm, location: location
                         }
@@ -76,6 +78,7 @@ export default {
     mounted() {
         axios
         .get('http://localhost:3000/fusion/index', {
+                headers:{'Authorization': `Bearer ${token}`},
                 params: {
                         term: "events for kids", location: "80210"
                         }

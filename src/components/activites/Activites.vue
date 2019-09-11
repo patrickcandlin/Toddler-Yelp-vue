@@ -54,7 +54,8 @@ import axios from 'axios'
 import Card from "./Card.vue"
 import ReviewModal from "./ReviewModal.vue"
 import MoreInfoModal from "./MoreInfoModal.vue"
-
+const token = localStorage.getItem('jwt')
+console.log(token)
 export default {
     name: "Activites",
     data() {
@@ -83,6 +84,7 @@ export default {
             const { location, searchTerm } = this.searchForm
             axios
                 .get('http://localhost:3000/fusion/index', {
+                    headers:{'Authorization': `Bearer ${token}`},
                     params: {
                         term: searchTerm, location: location
                         }
@@ -100,6 +102,7 @@ export default {
     mounted() {
         axios
         .get('http://localhost:3000/fusion/index', {
+                headers:{'Authorization': `Bearer ${token}`},
                 params: {
                         term: "Activites", location: "80210"
                         }
