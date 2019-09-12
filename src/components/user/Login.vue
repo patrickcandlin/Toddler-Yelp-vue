@@ -37,6 +37,7 @@ export default {
                 .then(result => {
                     console.log(result)
                     localStorage.setItem("jwt", result.data.jwt)
+                    localStorage.setItem("name", result.data.user.id)
                     if(result.statusText === "Accepted" ){
                         this.$router.push({path: '/'})
                     }else{

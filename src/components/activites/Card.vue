@@ -36,9 +36,11 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     props: {
         business: Object,
+        reviews: [],
     },
     methods: { 
         passSelectedBusiness() {
