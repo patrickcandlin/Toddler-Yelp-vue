@@ -3,21 +3,25 @@
     <div>
         <img src="./images/kid-in-field2.jpg" alt="kid-in-feild" >
         <Activites />
-        <hr>
-        <Events />
-        <hr>
-        <h2>Restaurants</h2>
     </div>
 </template>
-
 <script>
 import Activites from './activites/Activites.vue'
 import Events from './events/Events.vue'
 export default {
+    data() {
+        return {
+            searchForm: {
+                    location: '',
+                    searchTerm: '',      
+                }
+        }        
+    },
    components: {
        Activites,
        Events
-   } 
+   },
+
 }
 </script>
 <style >

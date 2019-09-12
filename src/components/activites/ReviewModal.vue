@@ -23,6 +23,9 @@
     </b-modal>
 </template>
 <script>
+import axios from 'axios'
+const token = localStorage.getItem('jwt')
+const userId = localStorage.getItem('name')
 export default {
     name: "ReviewModal",
     data(){
@@ -37,16 +40,26 @@ export default {
     methods: {
         submitReview(){
             console.log(this.reviewContent, this.reviewRating, this.selectedBusiness.id)
-            // axios
-            //     .post('http://localhost:3000/reviews/index',{
-            //         params: {
-            //             user_id: this.user_id,
-            //             content: this.reviewContent,
-            //             rating: this.reveiwRating
-            //             }
-            //     })
-            this.reviewContent = ""
-            this.reviewRating = "5"
+            axios({
+                method: 'post',
+                url: 'http://localhost:3000/reviews',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'   
+                    },   
+                data: {
+                     review: {
+                        user_id: userId,
+                        content: this.reviewContent,
+                        rating: this.reviewRating,
+                        yelp_id: this.selectedBusiness.id,
+                        yelp_name: this.selectedBusiness.name
+                        }
+                }
+            }).then(() => {
+                this.reviewContent = ""
+                this.reviewRating = "5"
+            })
          }
     }
 }

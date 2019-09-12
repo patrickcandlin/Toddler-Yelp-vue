@@ -7,6 +7,7 @@
         </b-container>
         <b-container>
             <b-form
+                id="search-bar"
                 @submit="fusionSearch()"
                 v-on:submit.prevent
                 inline
@@ -45,7 +46,7 @@
             /> 
         </b-container>
         <ReviewModal :selectedBusiness="selectedBusiness"/>
-        <MoreInfoModal :selectedBusiness="selectedBusiness" />
+        <MoreInfoModal :selectedBusiness="selectedBusiness" :reviewsArray="reviewsArray"/>
 
     </section>
 </template>
@@ -60,7 +61,7 @@ export default {
     name: "Activites",
     data() {
         return {
-            
+            reviewsArray: [],
             businessArray: [],
             searchForm: {
                 location: '',
@@ -112,6 +113,13 @@ export default {
                 this.businessArray = response.data.businesses
             }
         )
+         axios({
+                method: 'get',
+                url: 'http://localhost:3000/reviews',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    }
+            }).then(result => this.reviewsArray = result.data)
     }
 }
 </script>
