@@ -14,18 +14,16 @@
                     <a>Activites</a>
                 </router-link>
             </b-nav-item>
-            <b-nav-item href="#">
-                <router-link to="/events">
-                  <a> Events </a>
-                </router-link>
-              </b-nav-item>
           </b-navbar-nav>
-          <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
 
             <b-nav-item-dropdown right>
-              <template slot="button-content"><em>User</em></template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <template slot="button-content"><em>Account</em></template>
+                <b-dropdown-item href="#">
+                    <router-link to="/profile">
+                      Profile
+                    </router-link>
+                </b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

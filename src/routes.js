@@ -3,10 +3,12 @@ import Activites from "./components/activites/Activites.vue"
 import Events from "./components/events/Events.vue"
 import Login from "./components/user/Login.vue"
 import Signup from "./components/user/Signup.vue"
+import Profile from "./components/user/Profile.vue"
 export const routes = [
     { path: '/', component: Home },
     { path: '/activites', component: Activites, },
     { path: '/events', component: Events, },
     { path: '/login', component: Login, },
-    { path: '/signup', component: Signup, }
+    { path: '/signup', component: Signup, },
+    { path: '/profile', component: Profile, }
 ]

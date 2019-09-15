@@ -26,7 +26,7 @@
                 variant="light"
                 v-b-modal.more-info-modal
                 @click="passSelectedBusiness"
-            >
+               > 
                 more
             </b-button>
             
@@ -45,7 +45,8 @@ export default {
     methods: { 
         passSelectedBusiness() {
             this.$emit("viewSelectedBusiness", this.business)
-        }
+        },
+   
     },
     name: "Card"
 }
