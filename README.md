@@ -1,6 +1,6 @@
 # toddler-yelp
-
-## Project setup
+Yelplet is a Vue.js. Application is intended to allow parents with young children the ability to review restaurants, businesses, parks, and activities. Yelplet utilizes Yelp's Fusion API to power users' search results. All reviews are stored in a PostgreSQL database, powered by a Ruby on Rails backend. 
+## Yelplet setup
 ```
 npm install
 ```
@@ -25,5 +25,21 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+##Demo
+
+### Log-in and Signup
+![](./demo/Yelpletloginandsignup.gif)
+
+### Home page
+![](./demo/homePage.gif)
+
+### Search
+![](./demo/searchFunction.gif)
+
+### More Information
+![](./demo/moreInfo.gif)
+
+### Review
+![](./demo/reviewFunction.gif)
+
