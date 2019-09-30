@@ -2,7 +2,7 @@
         <b-container>
 
         <b-form @submit.stop.prevent @submit="sendNewUserInfo">
-            <label for="username">Username or Password</label>
+            <label for="username">Username or Email</label>
             <b-input v-model="username" type="text"></b-input>
             <label for="password">Password</label>
             <b-input type="password" id="text-password" v-model="password"></b-input>

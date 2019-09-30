@@ -45,8 +45,8 @@
                 @viewSelectedBusiness="setSelectedBusiness"
             /> 
         </b-container>
-        <ReviewModal :selectedBusiness="selectedBusiness"/>
-        <MoreInfoModal :selectedBusiness="selectedBusiness" :reviewsArray="reviewsArray"/>
+        <ReviewModal :selectedBusiness="selectedBusiness" />
+        <MoreInfoModal :selectedBusiness="selectedBusiness" :reviewsArray="reviewsArray" />
 
     </section>
 </template>
@@ -97,15 +97,25 @@ export default {
         },
         setSelectedBusiness(business){
             this.selectedBusiness = business
-        },
+            axios({
+                method: 'get',
+                url: 'http://localhost:3000/reviews',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    }
+            })
+            .then(result => this.reviewsArray = result.data)
 
+
+            
+        }
     },
     mounted() {
         axios
         .get('http://localhost:3000/fusion/index', {
                 headers:{'Authorization': `Bearer ${token}`},
                 params: {
-                        term: "Activites", location: "80210"
+                        term: "kids", location: "80205"
                         }
                     }
             )
